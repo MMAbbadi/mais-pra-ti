@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles.css">
+  <title>Formularios</title>
+</head>
+<body>
+<a href="./exercicio/form.html">Exercicio aula 25</a>
+  <h1>Aula 25 - Formulários</h1>
+  <form action="">
+    <h2>Cadastro de evento</h2>
+
+    <label for="nome">Nome Completo:</label>
+    <input type="text" id="nome" name="nome" />
+    <br>
+
+    <label for="email">E-mail:</label>
+    <input type="email" id="email" name="email" placeholder="exemplo@email.com"/>
+    <br>
+
+    <label for="senha">Senha:</label>
+    <input type="password" id="senha" name="senha" />
+    <br>
+
+    <label for="confirma-senha">Confirme sua senha:</label>
+    <input type="password" id="confirma-senha" name="confirma-senha" />
+    <br>
+
+    <label for="genero">Gênero:</label>
+    <select name="genero" id="genero">
+      <option value="none">Selecione</option>
+      <option value="masculino">Masculino</option>
+      <option value="feminino">Feminino</option>
+      <option value="indefinido">Outro</option>
+    </select>
+    <br>
+
+    <label for="pais">País:</label>
+    <select name="pais" id="pais">
+      <option value="none">Selecione</option>
+      <option value="brazil">Brasil</option>
+      <option value="mexico">Mexico</option>
+      <option value="italy">Itália</option>
+    </select>
+
+    <label for="estado">Estado:</label>
+    <select name="estado" id="estado">
+      <option value="none">Selecione</option>
+      <option value="ceara">Ceára</option>
+      <option value="mato grosso">Mato Grosso</option>
+      <option value="rondonia">Rondônia</option>
+    </select>
+    <br>
+
+    <label for="birth-date">Data Nascimento:</label>
+    <input type="date" name="birth-date" id="birth-date" />
+    <br>
+
+    <fieldset>
+      <legend>Preferências Comunicação</legend>
+      <div>
+        <input type="checkbox" id="email_novidades" name="email-preferencia">
+        <label for="email_novidades">Preferência por E-mail</label>
+      </div>
+      <br>
+
+      <div>
+      <input type="checkbox" id="whatsapp_novidades" name="whatsapp-preferencia">
+      <label for="whatsapp_novidades">Preferência por WhatsApp</label>
+      </div>
+      <br>
+    </fieldset>
+  
+    <label for="foto_perfil">Foto de Perfil</label>
+    <input type="file" name="foto_perfil" id="foto_perfil">
+    <br>
+
+    <button type="submit" id="btn_enviar">Enviar</button>
+
+  </form>
+
+  <script>
+    var btnEnv = document.getElementById('btn_enviar')
+    var cadNome = document.getElementById('nome')
+
+    btnEnv.disabled = true
+
+    cadNome.addEventListener('input', function verInput(){
+      if(cadNome.value.trim() !== ""){
+        btnEnv.disabled = false
+      }
+    })
+    
+  </script>
+</body>
+</html>

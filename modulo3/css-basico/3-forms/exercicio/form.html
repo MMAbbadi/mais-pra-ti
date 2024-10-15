@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>Exercicio aula 25</title>
+</head>
+<body>
+  <!-- criar um formulario de cadastro de um site de e-commerce. O formulario cdeve conter os seguintes campos:
+
+  Nome completo (campo de texto)
+  Enderço de Email (campo de email)
+  Senha (campo de senha)
+  Selecionar Pais (menu dropdown)
+  Gnero (btn radio)
+  Aceitar termos de servidoço (checkox)
+
+  Estilizar para que:
+  Btn de envio fique destacado (efeito hover)
+  Largura de 400px e ecentralizado na tela -->
+
+  <h1>Formulario Exercicio</h1>
+  <form>
+    <h2>Cadastro Cliente</h2>
+    <label for="nome">Nome Completo:</label>
+    <input type="text" id="name" name="nome" placeholder="Nome Completo...">
+    <br>
+
+    <label for="email">Enderço de E-mail:</label>
+    <input type="email" id="mail" name="mail" placeholder="exemplo@mail.com">
+    <br>
+
+    <label for="senha">Senha:</label>
+    <input type="password" id="pass_word" name="senha" placeholder="Senha...">
+    <br>
+
+    <label for="country_select">País de residência:</label>
+    <select name="pais" id="country_select">
+      <option value="brazil">Brasil</option>
+      <option value="italy">Itália</option>
+      <option value="argentina">Argentina</option>
+      <option value="united states">Estados Unidos</option>
+      <option value="bolivia">Bolivia</option>
+    </select>
+    <br>
+
+    <fieldset>
+      <legend>Informe seu Gênero</legend>
+      <div>
+        <input type="radio" id="gen_masc" name="genero" value="Masculino" checked>
+        <label for="gen_masc">Masculino</label>
+      </div>
+      
+      <div>
+        <input type="radio" id="gen_fem" name="genero" value="Feminino">
+        <label for="gen_fem">Feminino</label>
+      </div>
+      
+      <div>
+        <input type="radio" id="gen_outro" name="genero" value="Outro">
+        <label for="gen_outro">Outro</label>
+      </div>
+    </fieldset>
+    <br>
+
+    <div>
+      <input type="checkbox" id="aceite_termos">
+      <label for="aceite_termos">Aceito os termos de serviços</label>
+    </div>
+    <br>
+
+    <button id="submit">Enviar</button>
+  </form>
+
+
+</body>
+</html>

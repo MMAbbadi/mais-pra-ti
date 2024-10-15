@@ -1,0 +1,39 @@
+body{
+    background-color: blanchedalmond;
+  }
+  
+  form{
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 15px;
+    border: 1px solid darkmagenta;
+    margin: auto;
+    max-width: 400px;
+  }
+  
+  input, select{
+    border: 1px solid #ccc;
+    padding: 5px;
+  }
+  
+  fieldset > div {
+    display: inline;
+  }
+  
+  fieldset > div > input {
+    padding: 5px;
+    display: inline;
+  }
+  
+  button {
+    cursor: pointer;
+    padding: 10px;
+    background-color: rgb(212, 44, 44);
+    border: none;
+  }
+  
+  button:hover{
+    color: white;
+    background-color: rgb(185, 3, 3);
+  }

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Home</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <style>
+      form > p{
+        display: none;
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+      Criar Doc HTML com head, header, nav, section, footer, paragrafo, lista e tabela.
+      Modificar a fonte do paragrafo.
+      Formulario de registro de usuario.
+    -->
+    <nav>
+      <a href="../../index.html">Voltar pagina Inicial</a>
+      <a href="./index.html">Pagina 2</a>
+    </nav>
+
+    <header>
+      <h1>Hello Pagina Exercicio</h1>
+      <h2 style="color: blue; font-size: 50px">Hello Pagina 2</h2>
+      <h3>Hello Pagina 2</h3>
+    </header>
+
+    <section>
+      <p>
+        Paragrafo de algo interessante que possa ser colocado aqui
+      </p>
+    </section>
+
+    <section>
+      <ol>
+        <li>Home</li>
+        <li>About</li>
+        <li>Products</li>
+      </ol>
+    </section>
+
+    <section>
+      <form action="submit">
+        <input  type="text" id="user" placeholder="Digite seu usuario">
+        <input  type="email" id='mail' placeholder="Digite seu e-mail">
+        <input  type="password" id='pass' placeholder="Digite uma senha">
+        <p id="wng_msg">Preencha os Campos para poder enviar as informações!</p>
+        <button id="btn_enviar" type="submit">Submit</button>
+      </form>
+    </section>
+    <script src="./aula22.js"></script>
+  </body>
+</html>
