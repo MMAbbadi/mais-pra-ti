@@ -1,0 +1,30 @@
+.container {
+    position: relative;
+    background-color: #ccc;
+    width: 800px;
+    margin: 20px auto;
+    border: 3px solid;
+    top: 10px;
+    left: 30px;
+  }
+  
+  .absolute {
+    position: absolute;
+    border: 3px solid blue;
+    top: 30px;
+    right: 30px;
+    bottom: 10px;
+  }
+  
+  .fixed {
+    position: fixed;
+    border: 2px solid blue;
+    top: 350px;
+    left: 10px;
+  }
+  
+  .sticky {
+    position: sticky;
+    top: 0;
+    background: yellow;
+  }

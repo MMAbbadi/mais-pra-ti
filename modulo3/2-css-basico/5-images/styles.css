@@ -1,0 +1,29 @@
+#heich {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+    box-shadow: 5px 5px 15px;
+    background-color: rgba(255,255,255,0.3);
+  }
+  
+  #jin {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    box-shadow: 5px 5px 15px;
+    opacity: 0.7;
+    background-color: rgba(255,255,255,0.3);
+  }
+  
+  figure.foto-legenda{
+    border: 8px solid white;
+    box-shadow: 1px 1px 4px black;
+    width: 40%;
+    height: 40%;
+  }
+  
+  figure.foto-legenda figcaption{
+    opacity: 0;
+    
+  }

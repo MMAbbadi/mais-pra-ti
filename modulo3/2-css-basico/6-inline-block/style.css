@@ -1,0 +1,28 @@
+div{
+    border: 1px solid blue;
+  }
+  
+  p{
+    border: 1px solid blue;
+  }
+  
+  h1 {
+    border: 1px solid blue;
+  }
+  
+  span {
+    display: inline-block;
+    visibility: hidden; /* Reserva o espaço do elemento porem não o renderiza */
+    height: 75px;
+    width: 150px;
+    border: 1px solid blue;
+    cursor: pointer; /*Funciona somente se o elemento for renderizado */
+  }
+  
+  a {
+    border: 1px solid blue;
+  }
+  
+  strong {
+    border: 1px solid blue;
+  }

@@ -1,0 +1,68 @@
+* {
+  
+}
+
+h1 {
+
+}
+
+.leroy {
+
+}
+
+
+#jin {
+
+}
+
+input[type = "text"] { /* Seletor para um tipo especifico de input (neste caso todos os inputs de texto) */
+
+}
+
+div p { /* Aplicar estilizações para todos os elementos dentro de um outro elemento (neste caso, todos os paragrafos dentro de uma div)*/ 
+
+}
+
+ul > li { /* Apenas elementos que estão diretamente ligados ao elemento pai */
+
+}
+
+h1 + p { /* Somente elementos que estejam diretamente adjacente ao elemento */
+
+}
+
+h1 ~ p { /* Todos os elementos que seguirem o elemento Irmão, terão as propriedades aplicadas*/
+
+}
+
+a:hover { /* Aplica efeito quando o cursor passar por cima do elemento */ 
+
+}
+
+a:visited { /* Quando link for clicado, irá aplicar as propriedades descritas 1*/
+
+}
+
+p::after { /* Aplica as propriedades após todos os elementos*/
+
+}
+
+p::first-letter { /* Aplica as propriedades a primeira letra de todos os elementos */
+
+}
+
+p::first-line { /* Aplica as propriedades a primeira linha de todos os elementos */
+
+}
+
+li:nth-child(2){ /* Aplica as propriedades a todos os elementos filhos do elemento, que serão indicados dentro do -> ()*/
+
+}
+
+tr:nth-child(even){ /* Aplica as propriedades a todos os elementos filhos do elemento, que serão indicados dentro do -> ()*/
+
+}
+
+button:not(.primary){ /* Exclui o elemento das diretrizes anteriores e aplica propriedades diferentes para ele*/
+  
+}

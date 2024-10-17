@@ -1,0 +1,21 @@
+body {
+    color: black;
+    background-color: black;
+  }
+  
+  div {
+    color: #ccc;
+    border: 1px solid red;
+  }
+  
+  p {
+    color: blue;
+  }
+  
+  .paragrafo {
+    color: lightblue;
+  }
+  
+  #paragrafo {
+    color: lime
+  }
