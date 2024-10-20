@@ -94,4 +94,167 @@
     color: black;
     background-color: rgb(255, 0, 0);
   }
+  :root {
+    --font-family: "Bebas Neue", sans-serif;
+    --font-weight: 400;
+    --main-bg-color: rgb(34, 34, 34);
+    --accent-color: rgb(170, 17, 17);
+    --hover-color: rgb(255, 60, 60);
+    --sidebar-bg: rgb(0, 0, 156);
+    --sidebar-hover-bg: rgb(255, 0, 0);
+    --sidebar-link-bg: rgb(37, 0, 201);
+    --text-color: white;
+    --shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+  }
+  
+  * {
+    font-family: var(--font-family);
+    font-weight: var(--font-weight);
+    font-style: normal;
+    color: var(--text-color);
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    height: 100vh;
+    background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/d96bb958-4e6c-4ce0-9447-fbe226fbbecf/dgv24ev-8b2af7cc-3677-41c8-9fe4-228b12990300.jpg/v1/fill/w_1192,h_670,q_70,strp/tekken_8_animated_wallpaper_in_full_hd_and_4k__by_favorisxp_dgv24ev-pre.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+  
+  
+  /* Header e Footer */
+  header, footer, footer > p {
+    gap: 5px;
+    color: var(--accent-color);
+    background-color: var(--main-bg-color);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  header > h1 {
+    color: var(--accent-color);
+  }
+  
+  /* Nav */
+  nav > ul {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+  }
+  
+  nav > ul > li > a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 400;
+    cursor: pointer;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease-in-out, color 0.2s ease-in-out;
+    border-radius: 3px;
+  }
+  
+  nav > ul > li > a:hover {
+    color: var(--hover-color);
+    background-color: rgba(170, 17, 17, 0.1);
+  }
+  
+  /* Main */
+  main {
+    width: 100%;
+    gap: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+    flex-wrap: wrap;
+  }
+  
+  #content > h2, #content > p {
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
+  }
+  
+  /* Aside */
+  #barra_lateral {
+    
+    background-color: var(--sidebar-bg);
+    gap: 32px;
+    padding: 10px 5px;
+    height: auto;
+    min-height: 400px;
+    max-width: 300px;
+    border-radius: 5px;
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-shrink: 0;
+  }
+  
+  #barra_lateral > h3 {
+    position: relative;
+    bottom: 50px;
+    left: 0;
+  }
+  
+  #barra_lateral > a {
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 10px;
+    border-radius: 5px;
+    width: 95%;
+    text-align: center;
+    background-color: var(--sidebar-link-bg);
+    transition: background-color 0.3s ease-in-out, color 0.2s ease-in-out;
+  }
+  
+  #barra_lateral > a:hover {
+    color: black;
+    background-color: var(--sidebar-hover-bg);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    nav > ul {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    main {
+      flex-direction: column;
+      padding: 10px;
+    }
+  
+    #barra_lateral {
+      max-width: 90%;
+      margin: 10px auto;
+    }
+  
+    #image > img {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    nav > ul {
+      gap: 10px;
+    }
+  
+    header > h1, footer > p {
+      font-size: 18px;
+    }
+  }
   
