@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desafio - DOM</title>
+  <link rel="stylesheet" href="desafio.css">
+</head>
+<body>
+  <a href="../index.html">Voltar</a>
+
+  <h1 id="title">Bem-vindo ao DOM Manipulator!</h1>
+  <p id="direction">Clique nos botões abaixo para adicionar ou remover itens</p>
+
+  <div class="btn">
+    <button id="btn-add" onclick="inserir()">Add Item</button>
+    <button id="btn-rem" disabled onclick="remover()">Rem Item</button>
+  </div>
+
+  <section id="list-container">
+    <ul id="list"></ul>
+  </section>
+
+  <script src='desafio.js'></script>
+</body>
+</html>

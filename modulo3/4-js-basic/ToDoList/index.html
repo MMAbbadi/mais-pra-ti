@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ToDoList</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <a href="../index.html">⬅ Voltar</a>
+    <div class="logo">
+      <h3>Main</h3><span>Menagment</span>
+      <a href="" id="logo">To Do App</a>
+    </div>
+  </header>
+
+  <main>
+    <h3 id="main_title">Register Task</h3>
+
+    <form class="todos_inputs">
+      <div class="control">
+        <div class="input_item">
+          <label for="day">Dia</label>
+          <input name="day" class="form-control" placeholder="Day" />
+        </div>
+      
+        <div class="input_item">
+          <label for="month">Mês</label>
+        <select name="month" id="month" class="form-control">
+          <option value="">Mês</option>
+          <option value="1">Janeiro</option>
+          <option value="2">Fevereiro</option>
+          <option value="3">Março</option>
+          <option value="4">Abril</option>
+          <option value="5">Maio</option>
+          <option value="6">Junho</option>
+          <option value="7">Julho</option>
+          <option value="8">Agosto</option>
+          <option value="9">Setembro</option>
+          <option value="10">Outubro</option>
+          <option value="11">Novembro</option>
+          <option value="12">Dezembro</option>
+        </select>
+        </div>
+        
+        <div class="input_item">
+          <label for="year">Ano</label>
+          <select name="year" class="form-control">
+            <option value="">Ano</option>
+            <option value="2024">2024</option>
+          </select>
+        </div>
+      
+        <div class="input_item">
+          <label for="task_type">Tipo</label>
+          <select name="task_type" class="form-control">
+            <option value="">Tipo</option>
+            <option value="study">Estudar</option>
+            <option value="record">Gravar</option>
+            <option value="buy">Comprar</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="desciption">
+        <label for="description">Descrição</label>
+        <input type="text" name="description" placeholder="Descrição...">
+        <button type="submit">Salvar</button>
+      </div>
+    </form>
+  </main>
+</body>
+</html>

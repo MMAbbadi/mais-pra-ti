@@ -1,0 +1,13 @@
+@font-face{ /* Em caso de utilizar fontes locais */
+    font-family: "Madelina";
+    font-weight: normal;
+    font-style: normal;
+    src: url(diretorio e link aki) format(tipo de arquivo),
+         url(diretorio e link aqui) format(tipo de arquivo 2);
+  }
+  
+  .hello {
+    font-family: 'Ruge Boogie';
+    font-weight: bold;
+    font-size: 60px;
+  }

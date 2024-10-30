@@ -1,0 +1,71 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body{
+    gap: 10px;
+    height: 100vh;
+    width: 100vw;
+    padding: 10px 5px;
+  }
+  header{
+    background-color: #969494;
+    height: 3rem;
+    width: 100%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    padding-top: 10px;
+    border-radius: 5px;
+  }
+  
+  #container_menu{
+    width: 100%;
+    height: 2rem;
+    align-self: center;
+  }
+  
+  #menu{
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+    list-style: none;
+  }
+  
+  #menu a {
+    text-decoration: none;
+    padding: 2px 10px 5px 10px;
+    border-radius: 5px;
+  }
+  
+  #menu a:hover{
+    background-color: #f4f4f4;
+  }
+  
+  .menu_item {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: black;
+    font-weight: 300;
+    font-size: 16px;
+    position: relative; /* Adiciona contexto para o :after */
+    padding-bottom: 2px; /* Espaço para a linha */
+  }
+  
+  .menu_item:after {
+    content: ""; /* Necessário para criar um elemento :after */
+    display: block;
+    width: 0; /* Começa com largura 0 */
+    height: 2px; /* Altura da linha */
+    background: black; /* Cor da linha */
+    transition: width 0.2s ease-in-out; /* Animação suave */
+    position: absolute; /* Posiciona a linha */
+    left: 0; /* Alinha à esquerda */
+    bottom: 0; /* Alinha à parte inferior do texto */
+  }
+  
+  a:hover .menu_item::after {
+    width: 100%; /* Expande para 100% na interação */
+  }
+  
