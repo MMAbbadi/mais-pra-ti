@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Consulta de CEP</title>
+    <!-- Adicionando TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: '#da373d', // Vermelho Intenso
+              midnight: '#0a0a0a', // Preto Profundo
+              metallic: '#4a4a4a', // Cinza Metálico
+              gold: '#ffb800', // Amarelo/Dourado
+              snow: '#f5f5f5', // Branco Neve
+              electricBlue: '#1e90ff', // Azul Elétrico
+            },
+            backgroundColor: {
+              'primary-bg': '#0a0a0a', // Fundo Principal (Preto Profundo)
+              'panel-bg': '#4a4a4a', // Fundo de Painéis (Cinza Metálico)
+            },
+            textColor: {
+              'primary-text': '#f5f5f5', // Texto principal (Branco Neve)
+              'accent-text': '#da373d', // Texto de destaque (Vermelho Intenso)
+            },
+            borderColor: {
+              highlight: '#ffb800', // Borda de Destaque (Amarelo/Dourado)
+            },
+            boxShadow: {
+              intense:
+                '0 4px 6px rgba(0, 0, 0, 0.5), 0 1px 3px rgba(0, 0, 0, 0.1)', // Sombra intensa para botões e painéis
+            },
+            fontFamily: {
+              game: ['"Press Start 2P"', 'monospace'], // Fonte inspirada nos jogos
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .container {
+        max-width: 400px;
+        margin: 2rem auto;
+      }
+      .input-group {
+        margin-bottom: 1rem;
+      }
+      .cep-result {
+        padding: 1rem;
+        background-color: #4a4a4a;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+
+  <body class="bg-primary-bg flex flex-col justify-center items-center text-primary-text">
+    <header class="bg-green-400 text-white py-4 w-full text-center">
+      <h1>Consulta de CEP</h1>
+    </header>
+    
+    <main class="container">
+      <div class="input-group">
+        <label for="cep" class="block">Digite o CEP:</label>
+        <input
+          type="text"
+          id="cep"
+          class="w-full p-2 rounded border border-metallic text-slate-800"
+          placeholder="Ex: 01001-000"
+        />
+      </div>
+      <button
+        id="buscarCep" 
+        class="w-full bg-electricBlue hover:bg-[#59adff] text-white py-2 rounded shadow-intense"
+      >
+        Buscar
+      </button>
+      
+      <div id="cepResult" class="mt-4 hidden cep-result">
+        <p><strong>Endereço:</strong> <span id="logradouro"></span></p>
+        <p><strong>Bairro:</strong> <span id="bairro"></span></p>
+        <p><strong>Cidade:</strong> <span id="localidade"></span></p>
+        <p><strong>Estado:</strong> <span id="uf"></span></p>
+        <p><strong>Complemento:</strong> <span id="complemento"></span></p>
+      </div>
+    </main>
+
+    <script>
+      //Use AJAX
+      // document.getElementById('buscarCep').addEventListener('click', async function() {
+      //   let cep = document.getElementById('cep').value.replace(/\D/g, '');
+
+      //   // Verificação do CEP (se tem exatamente 8 dígitos)
+      //   if (cep.length !== 8) {
+      //     alert(`CEP: ${cep} inválido!`);
+      //     return; // Interrompe a execução se o CEP for inválido
+      //   }
+
+      //   let url = `https://viacep.com.br/ws/${cep}/json/`;
+
+      //   const xmlHttp = new XMLHttpRequest();
+      //   xmlHttp.open('GET', url, true);
+
+      //   xmlHttp.onreadystatechange = () => {
+      //     if (xmlHttp.readyState === 4) {
+      //       if (xmlHttp.status === 200) {
+      //         let data = JSON.parse(xmlHttp.responseText);
+
+      //         document.getElementById('logradouro').textContent = data.logradouro || 'N/A';
+      //         document.getElementById('bairro').textContent = data.bairro || 'N/A';
+      //         document.getElementById('localidade').textContent = data.localidade || 'N/A';
+      //         document.getElementById('uf').textContent = data.uf || 'N/A';
+      //         document.getElementById('complemento').textContent = data.complemento || 'N/A';
+
+      //         document.getElementById('cepResult').classList.remove('hidden');
+      //       } else {
+      //         alert('CEP Inválido');
+      //       }
+      //     }
+      //   };
+
+      //   xmlHttp.send();
+      // });
+
+
+      //Use Fetch
+      document.getElementById('buscarCep').addEventListener('click', async function(){
+        let cep = document.getElementById('cep').value.replace(/\D/g, '')
+
+        if (cep.length !== 8){
+          alert(`CEP: ${cep} Inválido!`)
+          return
+        }
+
+        let url = `https://viacep.com.br/ws/${cep}/json/`
+
+        try {
+          let response = await fetch(url)
+          let data = await response.json()
+
+          if(data.erro){
+            alert('CEP não encontrado')
+            return
+          } 
+          document.getElementById('logradouro').textContent = data.logradouro || 'N/A';
+          document.getElementById('bairro').textContent = data.bairro || 'N/A';
+          document.getElementById('localidade').textContent = data.localidade || 'N/A';
+          document.getElementById('uf').textContent = data.uf || 'N/A';
+          document.getElementById('complemento').textContent = data.complemento || 'N/A';
+
+          document.getElementById('cepResult').classList.remove('hidden');
+        } catch (error) {
+          alert('Ocorreu um erro ao consultar o CEP. Tente novamente.');
+        }
+      })
+    </script>
+  </body>
+</html>
